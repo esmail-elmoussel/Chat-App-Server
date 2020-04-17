@@ -36,9 +36,8 @@ app.delete('/delete',(req,res) => {
 
 
 
-
-const server = app.listen(4000,() => {
-    console.log('app is running on port 4000');
+const server = app.listen(process.env.PORT || 4000,() => {
+    console.log(`app is running on port ${process.env.PORT}`);
 });
 
 const io = socket(server);
